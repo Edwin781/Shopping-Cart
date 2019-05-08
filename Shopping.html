@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="Shopping.css" rel="stylesheet" />
+    <script src="Shopping.js"></script>
+</head>
+<body>
+    <main id="contentPage">
+
+        <h1> Shopping Cart</h1>
+        <section id="contentDetails">
+
+            <form class="form-horizontal" action="/action_page.php">
+
+                <!--InvoiceDate-->
+                <div class="form-group">
+                    <label class="control-label" for="invoicedate"> Invoice Date:  </label>
+
+                    <input required type="date" id="invoicedate" name="invoicedate" class="validated" /><br>
+
+                </div>
+
+                <!--ItemId-->
+                <div class="form-group">
+                    <label class="control-label" for="itemid"> ItemID:</label>
+
+                    <input required type="number" id="itemid" name="itemid" class="validated" min="1000000" max="9999999" /><br>
+
+                </div>
+                <!--ItemName-->
+                <div class="form-group">
+                    <label class="control-label " for="ItemName"> ItemName:  </label>
+
+                    <input required type="text" id="itemname" pattern=".{5,25}" name="itemname" class="validated" /> <br>
+
+                </div>
+
+                <!--ItemDescription-->
+                <div class="form-group">
+                    <label class="control-label " for="ItemDescription"> ItemDescription:  </label>
+
+                    <textarea required cols="40" rows="6" id="itemdesc" maxlength="500" name="itemdesc" class="validated"></textarea> <br>
+
+
+                </div>
+
+                <!--ItemQuantity-->
+                <div class="form-group">
+                    <label class="control-label " for="ItemQuantity"> ItemQuantity:  </label>
+
+                    <input required type="number" id="itemquantity" min="1" step="1" name="itemquantity" class="validated" /> <br>
+
+                </div>
+
+
+                <!--ItemUnitPrice-->
+                <div class="form-group">
+                    <label class="control-label " for="ItemUnitPrice"> ItemUnitPrice:  </label>
+
+                    <input required type="number" id="ItemUnitPrice" placeholder="0.00" min="0.01" step="any" name="ItemUnitPrice" class="validated" /> <br>
+
+                </div>
+                <!--ItemCost-->
+                <div class="form-group">
+                    <label class="control-label " for="ItemCost"> ItemCost:  </label>
+
+                    <input type="number" id="ItemCost" name="ItemCost" class="validated" readonly="readonly" step="any" placeholder="0.00" /> <br>
+
+                </div>
+
+                <!--AddtoCart-->
+                <div class="form-group">
+                    <label class="control-label" for="AddtoCart"></label>
+
+                    <input type="submit" value="Add to Cart">
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!--Display section for user input-->
+        <section id="contentList">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Invoice Date</th>
+                        <th>ItemID</th>
+                        <th>Item Name</th>
+                        <th>Item Description</th>
+                        <th>Item Quantity</th>
+                        <th>Item Unit Price</th>
+                        <th>Item Cost</th>
+                        <th>Remove from Cart</th>
+
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+
+            </table>
+
+            <!-- Delete all button-->
+            <a href="#" class="deleteAll"> DeleteAll</a>
+
+            <!--Buttom display for subtotal shipping etc-->
+            <div class="Subtotalcal">
+                <form method="post">
+
+                    <div class="form-group">
+                        <label for="Subtotal">SubTotal:</label>
+                        <output type="number" id="Subtotal" name="Subtotal" />
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="Shipping">Shipping:</label>
+
+                        <output type="number" id="Shipping" name="Shipping" />
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="Tax">Tax:</label>
+
+                        <output type="number" id="Tax" name="Tax" />
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="Total">Total:</label>
+
+                        <output type="number" id="Total" name="Total" />
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+
+
+</body>
+
+
+
+</html>
